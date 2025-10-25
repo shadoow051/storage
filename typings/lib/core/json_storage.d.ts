@@ -1,5 +1,4 @@
 export namespace JsonStorage {
-    function GetDirname(relativePath: string, callerDirname: string): any;
     function ReadFile(filePath: string): Promise<any>;
     function WriteFile(filePath: string, data: any): Promise<boolean>;
     function EnsureFolder(folderPath: string): Promise<boolean>;

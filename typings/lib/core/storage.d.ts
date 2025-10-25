@@ -1,6 +1,5 @@
 export function SetStorage(filePath: string): Promise<boolean>;
 export let Storage: {
-    GetDirname: (relativePath: string, callerDirname: string) => any;
     ReadFile: (filePath: string) => Promise<any>;
     WriteFile: (filePath: string, data: any) => Promise<boolean>;
     EnsureFolder: (folderPath: string) => Promise<boolean>;

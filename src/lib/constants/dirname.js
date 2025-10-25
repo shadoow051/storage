@@ -2,31 +2,24 @@
 //region # Imports
 //≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
-import { JsonStorage } from "./json_storage.js";
+import { fileURLToPath } from "url";
+import path from "path";
 
 //≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
-//region # Set Storage
+//region # dirname
 //≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
-
-let Storage = JsonStorage;
 
 /**
- * @param {string} filePath
+ * @param {string} fileUrl
  */
-async function SetStorage(filePath) {
-  try {
-    const module = await import(filePath);
-    Storage = module.default || module;
-    return true;
-  } catch (error) {
-    Storage = JsonStorage;
-    console.error(error);
-    return false;
-  }
+function dirname(fileUrl) {
+  const filename = fileURLToPath(fileUrl);
+  const dirname = path.dirname(filename);
+  return dirname;
 }
 
 //≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 //region # Exports
 //≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
-export { SetStorage, Storage };
+export { dirname };

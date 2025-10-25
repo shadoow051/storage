@@ -3,30 +3,12 @@
 //≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
 import fs from "fs/promises";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
 
 //≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 //region # Json Storage
 //≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
 const JsonStorage = {
-  /**
-   * @param {string} relativePath
-   * @param {string} callerDirname
-   */
-  GetDirname: function (relativePath, callerDirname) {
-    try {
-      const __dirname = dirname(fileURLToPath(callerDirname));
-      const result = resolve(__dirname, relativePath);
-      return result;
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
-  },
-
   /**
    * @param {string} filePath
    */
