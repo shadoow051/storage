@@ -1,0 +1,44 @@
+{
+  "name": "@shdm/storage",
+  "version": "1.0.0",
+  "description": "A powerful library and flexible storage wrapper for Node.js.",
+  "main": "./src/index.js",
+  "types": "./typings/index.d.ts",
+  "scripts": {
+    "test": "node tests/test.js",
+    "build": "tsc"
+  },
+  "keywords": [
+    "shdm",
+    "system",
+    "storage"
+  ],
+  "author": "Shadow",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.js",
+      "types": "./typings/index.d.ts"
+    }
+  },
+  "files": [
+    "./src",
+    "./typings"
+  ],
+  "engines": {
+    "node": ">=15"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://shadoow051.github.io/shdm/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadoow051/storage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shadoow051/storage/issues"
+  }
+}
