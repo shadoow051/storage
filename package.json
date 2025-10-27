@@ -1,6 +1,6 @@
 {
   "name": "@shdm/storage",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A powerful library and flexible storage wrapper for Node.js.",
   "main": "./src/index.js",
   "types": "./typings/index.d.ts",
