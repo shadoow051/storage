@@ -1,7 +1,8 @@
+/*
 import {
   version,
-  SetStorage,
-  Storage,
-  dirname,
-  filename,
+  StorageType,
+  StorageManager,
+  JsonStorage,
 } from "./../src/index.js";
+*/
